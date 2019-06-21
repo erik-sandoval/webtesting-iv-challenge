@@ -11,6 +11,7 @@ server.post('/user', (req, res) => {
     return db('users')
       .insert(req.body)
       .then(user => {
+        console.log(user)
         res.status(201).json({ message: 'user created' });
       })
       .catch(err => {
